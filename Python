@@ -1,0 +1,213 @@
+# nome = "Quézia"
+# sobrenome = "Miranda"
+# idade = 21
+# ano_de_nascimento = 2002
+# maior_de_idade = idade >=  18
+# altura_metros = 1.66
+
+# print('Nome:', nome)
+# print('Sobrenome:', sobrenome)
+# print('idade:', idade)
+# print('Ano de nascimento:', ano_de_nascimento)
+# print('É maior de idade? :', maior_de_idade)
+# print('Altura em metros:', altura_metros)
+
+# Ordem de precendencia 
+# imc =  66 / 1.66 ** 2
+
+# imc2 = f'{imc:.2f}'
+
+
+
+
+# print(imc2)
+
+# #formatação
+
+
+# a = 'A'
+# b = 'B'
+# c = 1.1
+
+# formato = 'a={} b={} c={:.2f}'.format(a, b, c)
+
+# print(formato)
+
+
+# nome = "Luiz"
+# idade = 23
+# formato = '{1} tem {0} anos'
+# print(formato.format(nome, idade))
+
+# entrada = input("Você quer 'entrar' ou 'sair'? ")
+
+# if entrada == 'entrar' :
+#     print("Você entrou no sistema")
+# elif entrada == 'sair' :
+#     print('Você saiu do sistema')
+# else:
+#     print('Você não digitou nem entrar nem sair ')
+
+# condicao1 = False
+# condicao2 = False
+# condicao3 = True
+# condicao4 = True 
+
+# if condicao1:
+#     print('Essa condição é verdadeira')
+#     print("Essa condição é verdadeira")
+# elif condicao2:
+#     print("Condição 2")
+# elif condicao3:
+#     print("Condição 3")
+# elif condicao4:
+#     print("Condição 4")
+# else:
+#     print("Nenhuma condiçaõ foi satisfeita")
+
+"""
+Operadores de comparação (relacionais)
+OP         Significado     Exemplo (True)
+
+>           maior          2 > 1
+
+>=          maior ou igual  2>=2
+
+<           menor           1 < 2
+
+<=          menor ou igual  2 <= 2
+
+==          igual           'a' == 'a'
+
+!=          diferente       'a' != 'b'
+"""
+
+
+# primeiro_valor = int(input('Digite um valor: '))
+# segundo_valor = int(input ('Digite outro valor: '))
+
+# if primeiro_valor > segundo_valor:
+#     print("O primeiro valor é maior que o segundo valor")
+# else:
+#     print("O segundo valor é maior que o primeiro valor")
+
+
+# terceiro_valor = input('Digite um valor: ')
+# quarto_valor = input('Digite outro valor: ')
+
+# if terceiro_valor >= quarto_valor:
+#     print(
+#         f'{terceiro_valor=} é maior ou igual '
+#         f' ao que {quarto_valor=}'
+
+#     )
+
+# else:
+#     print(
+#         f'{quarto_valor=} é maior'
+#         f' do que{terceiro_valor=}'
+#     )
+
+
+# if 20 > 4 or 4 > 5:
+#     print('verdadeira')
+# else:
+#     print('Falsa')
+
+
+# entrada = input('[E]ntrar [S]air: ')
+# senha_digitada = input("Senha: ")
+
+# senha_permitida = '123456'
+
+# if entrada == 'E' and senha_digitada == senha_permitida:
+#     print('Entrar')
+# else:
+#     print('Sair')
+
+# Not inverte para false
+
+#Operadores in e not in (estar entre ou nao estar entre )
+
+# String são interáveis 
+
+#  Interpolação básica de strings
+
+# nome = 'Quézia'
+# preco = 2500
+# variavel = '%s, o preço é R$%x' % (nome, preco)
+# print(variavel)
+
+# d e i = int; f = float, s = string, x e X = Hexadecimal
+
+"""
+(Caractere) (><^) (quantidade)
+> - Esquerda
+< - Direita
+^ - Centro 
+Sinal - + ou -
+Ex.: 0>-100, .1f
+Conversion flags - !r !s !a
+"""
+
+# 
+
+# variavel = 'Uva'
+# print(len(variavel))
+
+# print(variavel[0:3])
+
+
+# nome = input('Digite seu nome: ')
+
+# idade = int(input('Digite sua idade: ' ))
+
+# if nome and idade:
+#     print('Seu nome é ', nome)
+#     print('Seu nome invertido é: ', nome[::-1]) 
+#     print('Seu nome tem ', len(nome), 'letras') 
+#     print('A primeira letra do seu nome é ', nome[0])
+#     print('A ultima letra do seu nome é: ', nome[-1])
+# else:
+#     print('Desculpa, você deixou os campos em branco')
+
+# if ' ' in nome:
+#     print('Seu nome contém espaços ')
+# else:
+#     print('Seu nome não contem espaços')
+
+# erro de excessão try except
+
+"""
+numero_str = input (
+    'Vou dobrar o numero que você digitar: '
+)
+try:
+    numero_float = float(numero_str)
+    print('Float', numero_float)
+    print(f'O dobro de {numero_str} é {numero_float * 2
+                                       }')
+except:
+    print('Isso não é um numero ')
+"""
+
+"""
+Flag (Bandeira) - Marcar local
+None = não valor 
+is e is not = é ou não é (tipo, valor, identidade)
+id = identidade
+"""
+
+v1 = 'a'
+print(id(v1))
+
+    
+
+
+
+
+
+
+
+
+
