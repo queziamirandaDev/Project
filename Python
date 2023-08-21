@@ -201,7 +201,12 @@ id = identidade
 v1 = 'a'
 print(id(v1))
 
-    
+    """
+https://docs.python.org/pt-br/3/library/stdtypes.html
+
+imutáveis que vimos: str, int, float, bool
+
+"""
 
 
 
