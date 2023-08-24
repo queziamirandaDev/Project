@@ -1,0 +1,101 @@
+// são modulos ou pacote, os modulos evitam ocupar espaços e reduz o tempo
+using System; // serve para o c# seja capaz de manipular coisas do usuario 
+using System.Collections.Generic;    // estrutura de dados importantes         
+using System.Linq; // conjunto muito grande de dados
+using System.Text; // permite manipular textos
+using System.Threading.Tasks; // criar programa que rodam em varios nucleos do processador ao mesmo tempo
+//using System.IO; // manipular arquivos 
+//using System.Net; // permite aplicações que interagem com a internete
+
+
+namespace HelloWorld 
+{
+    internal class Program
+    {
+        enum Cor { Azul, Verde, Amarelo, Vermelho }
+        enum Opcoes { Criar = 1, Deletar, Editar, Listar, Atualizar }
+        
+        static void Main(string[] args)
+        {
+
+            /*
+            // Estrutura de repetição
+            int contador = 0;
+
+            while (contador < 10)
+            {
+                Console.WriteLine(contador + 1);
+                Console.WriteLine("Rodando o while!");
+                contador = contador + 1;  // Contador++ , contador += 
+            }
+            */
+
+            /*
+            // mesmo se for FALSE repete e faz
+            do
+            {
+
+            } while (100 < 10);
+
+            */
+
+            // foreach 
+            /*
+            string[ ] palavras = { "Paz", "Felicidade","Prosperidade", "Harmonia","Riquezas"};
+
+            foreach(string palavra in palavras) //para cada palavra no array, repita o bloco de codigo
+            {
+                Console.WriteLine(palavra);
+            }
+ */
+
+            // variavel length é tudo que esta dentro do array
+            // usando array com for 
+
+            string[] palavras = { "Paz", "Felicidade", "Prosperidade", "Harmonia", "Riquezas" };
+
+            for (int contador = 0; contador < palavras.Length ; contador++)
+            {
+                Console.WriteLine(contador);
+                Console.WriteLine(palavras[contador]);
+               
+            }
+            Console.WriteLine("================================================================"); //ordem decrescente :
+
+            for (int contador2 = 4; contador2 > 0; contador2--) 
+            {
+                Console.WriteLine(contador2);
+                Console.WriteLine(palavras[contador2]);
+            }
+
+            Console.ReadLine();
+
+            /*
+            Console.WriteLine("Selecione uma das opções abaixo: ");
+            Console.WriteLine("1-Criar\n2-Deletar\n3-Editar\n4-Listar\n5-Atualizar");
+
+
+            int index = int.Parse( Console.ReadLine());
+            Opcoes opcaoSelecionada = (Opcoes)index;
+
+           switch (opcaoSelecionada)
+            {
+                case Opcoes.Criar:
+                    Console.WriteLine("Você quer criar algo ");
+                    break;
+                case Opcoes.Deletar:
+                    Console.WriteLine("Você quer Deletar ");
+
+                    break;
+                case Opcoes.Editar:
+                    Console.WriteLine("Editando...");
+                    break;
+                case Opcoes.Listar:
+                    Console.WriteLine("Vamos Listar ");
+                    break;
+                case Opcoes.Atualizar:
+                    Console.WriteLine("ATUALIZANDO....");
+
+                    break;  
+            }
+            */
