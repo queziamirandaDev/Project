@@ -1,0 +1,44 @@
+Public Class Form1
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim preco_unitario, preco_final, qtd
+
+        preco_unitario = InputBox("Preço unitario: ")
+        qtd = InputBox("Quantidade: ")
+        preco_final = CDbl(preco_unitario) * CInt(qtd)
+
+        MsgBox("Preço final: " & CDbl(preco_final))
+
+        If (preco_final < 50) Then
+            MsgBox("Pagamento avista")
+        Else
+            MsgBox("pagamento parcelado")
+
+        End If
+
+        Dim nome
+        nome = InputBox("Digite o seu nome:")
+        MsgBox("Bem vida " & UCase(nome))
+
+        Dim name
+        name = InputBox("Write your name:")
+        MsgBox("Welcome " & LCase(name))
+
+        Dim money
+        money = InputBox("O dinheiro vem a mim com facilidade")
+        MsgBox(Len(money))
+
+        Dim n1, n2, media
+
+        n1 = InputBox("Digite a primeira nota: ")
+        n2 = InputBox("Digite a segunda nota: ")
+        media = (CDbl(n1) + CDbl(n2) / 2)
+
+        If (media >= 5) Then
+            MsgBox("O aluno foi aprovado, com media : " & CDbl(media))
+        Else
+            MsgBox("O aluno foi reprovado, com media: " & CDbl(media))
+
+
+        End If
+    End Sub
+End Class
