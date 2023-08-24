@@ -1,0 +1,7 @@
+Dim wshshell
+
+intOpcao = msgbox("Deseja abrir o gerenciador de tarefas?", vbyesno, "Windows")
+if intOpcao = vbyes then
+	Set WshShell = WScript.CreateObject("WScript.Shell")
+	WshShell.Run("%systemroot%\system32\taskmgr.exe")
+end if
