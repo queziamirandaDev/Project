@@ -1,0 +1,43 @@
+Imports System
+
+Module Program
+    Sub Main(args As String())
+
+        'Comando de repetição no VisualBasic
+        Dim x
+
+        For x = 1 To 10
+            Console.WriteLine(x)
+        Next
+        Console.WriteLine("Fim")
+
+
+        Dim y, acumulador
+        acumulador = " "
+
+        For y = 1 To 10
+            acumulador = acumulador & y & " "
+        Next
+        Console.WriteLine(acumulador)
+
+        For x = 1 To 12
+            acumulador = acumulador & x & "" & vbCrLf 'retornar a linha de alimentação de dados, pular linha
+
+
+        Next
+        Console.WriteLine(acumulador
+                          )
+
+
+        Dim num As Integer
+        Dim i As Integer
+        num = 5
+
+        For i = 1 To 10
+            Console.WriteLine(num & "x" & i & "=" & num * i)
+
+        Next
+
+
+    End Sub
+End Module
