@@ -1,0 +1,62 @@
+function converterImagem() {
+
+    // Receber Arquivo do formulario
+    
+     var arquivoEnviado = document.getElementById("comprovante").files;
+    console.log(arquivoEnviado)
+    
+    // Verificar se existe o arquivo
+    if(arquivoEnviado.length > 0) {
+    
+        // Recuperar os dados da imagem
+    
+        var arquivoCarregado =  arquivoEnviado[0];
+    
+      //
+     var arquivoLer = new FileReader(); // ler o arquivo
+    
+    arquivoLer.onload = function(arquivoCarregadoEvento) {
+        // Converter a imagem para base64
+        var srcDados = arquivoCarregadoEvento.target.result;
+        console.log(srcDados);
+    
+        //***** Inicio enviar imagem para o html *****/
+        // Criar elemento HTML
+        var novaImagem = document.createElement('img');
+    
+        // Atribuir a img base64 para o atributo src da tag <img>
+        novaImagem.src = srcDados;
+    
+        //Enviar a imagem para o HTML
+        document.getElementById("receberImagem").innerHTML = novaImagem.outerHTML;
+    
+        //***** Fim enviar imagem para o html *****/
+    
+        //**** Inicio gerar PDF */
+        //iNSTANCIAR O jsPDF
+        
+
+        const doc = {
+    
+        filename: 'myfile.pdf',
+        image: {type: 'jpeg', quality: 0.98},   
+        html2canvas: {scale: 2},
+        jsPDF: {unit: 'in', format:"a4", orintation: "portrait"},
+         //Imagem que deve estar no PDF
+        
+     
+        
+
+        };
+        // Gerar PDF
+        html2pdf().set(doc).from(receberImagem).save();
+    
+        //**** Fim gerar PDF */
+    }
+    }
+    
+    // o metodo readAsDataURL é usado para ler o conteudo do tipo file
+    arquivoLer.readAsDataURL(arquivoCarregado);
+    
+    
+    }
