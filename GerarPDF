@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar PDF do arquivo enviado</title>
+    
+    
+</head>
+<body>
+    <h1>Enviar comprante</h1>
+    <input type="file"  id="comprovante" > <br></br>
+    <button type="button" onclick="converterImagem()">Gerar PDF</button>
+    <div id ='receberImagem'></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        function converterImagem() {
+
+// Receber Arquivo do formulario
+
+        var arquivoEnviado = document.getElementById("comprovante").files;
+        console.log(arquivoEnviado)
+
+// Verificar se existe o arquivo
+if(arquivoEnviado.length > 0) {
+
+    // Recuperar os dados da imagem
+
+    var arquivoCarregado =  arquivoEnviado[0];
+
+  //
+ var arquivoLer = new FileReader(); // ler o arquivo
+
+arquivoLer.onload = function(arquivoCarregadoEvento) {
+    // Converter a imagem para base64
+    var srcDados = arquivoCarregadoEvento.target.result;
+    console.log(srcDados);
+
+    //***** Inicio enviar imagem para o html *****/
+    // Criar elemento HTML
+    var novaImagem = document.createElement('img');
+
+    // Atribuir a img base64 para o atributo src da tag <img>
+    novaImagem.src = srcDados;
+
+    //Enviar a imagem para o HTML
+    document.getElementById("receberImagem").innerHTML = novaImagem.outerHTML;
+
+    //***** Fim enviar imagem para o html *****/
+
+    //**** Inicio gerar PDF */
+    //iNSTANCIAR O jsPDF
+   var doc  = new jsPDF();
+
+   doc.text('Comprovante da viagem', 15, 20);
+
+    //Imagem que deve estar no PDF
+   doc.addImage(srcDados, 'JPEG', 15, 40, 300, 157);
+
+   // Gerar PDF
+   doc.save('celke.pdf');
+
+
+    //**** Fim gerar PDF */
+}
+}
+
+// o metodo readAsDataURL é usado para ler o conteudo do tipo file
+arquivoLer.readAsDataURL(arquivoCarregado);
+
+
+}
+    </script>
+</body>
+</html>
