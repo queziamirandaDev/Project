@@ -1,52 +1,95 @@
-#Caladora
+"""
+Calculo do primeiro digito do CPF
+CPF: 746.824.890-70
+Colete a soma dos 9 primeiro dígitos do CPF
+Multiplique cada um dos valores por uma contagem regressiva começando de 10
 
-while True:
-     
-    numero_1 = input('Digite um numero: ')
-    numero_2 = input('Digite um numero: ')
-    operador = input('Digite um operador (+-/*): ')
+Ex.: 746.824.890-70(746824890)
+    10  9   8   7   6   5   4   3   2
+    7   4   6   8   2   4   8   9   0
+    70  36  48  56  12  20  32  27  0
 
-    numeros_validos = None
+Somar todos os resultados:
+70+36+48+56+12+20+32+27+0 = 301
+Multiplicar o resultado anterior por 10
+301 * 10 = 3010
+Obter o resto da divisão da conta anterior por 11
+3010%11 = 7
+Se o resultado anterior for maior que 9:
+    resultado é 0
+contario disso:
+    resultado é o valor da conta
+"""
 
-    num_float = 0
-    num_2float = 0
+# cpf = 23080537807
 
-    try:
-        num_float = float(numero_1)
-        num_2float = float(numero_2)
-        numeros_validos = True
-    except:
-         numeros_validos = None
+# mult = (2*10) + (3*9) + (0*8)+(8*7)+(0*6)+(3*5)+(7*4)+(8*3)+(0*2)+(7*1)
 
+# mult_MULT = 177 * 10
 
-    if numeros_validos is None:
-        print('Um dos dois ou ambos são inavalidos.') 
-        continue
+# resto = 1770 % 11
 
-    operadores_permitidos = '+-/*'
+# res = 10
 
-    if operador not in operadores_permitidos:
-        print('Operador inavalido')
-        continue
-
-    if len(operador) > 1:
-        print('Digite apenas um operador')
-        continue
-
-    print('Foi realizado a sua conta, confira o resultado abaixo: ')
-    if operador == '+':
-       print(num_float + num_2float) 
-    elif operador == '-':
-        print(num_float - num_2float) 
-    elif operador == '/':
-        print(num_float / num_2float) 
-    elif operador == '*':
-        print(num_float * num_2float) 
-    else:
-        print('error')
+# if res > 9:
+#     print('O resultado é 0')
+# else:
+#     print(f'Resultado é {res}')
 
 
-    sair = input('Quer sair? [s]im: ').lower().startswith('s')
+#Gerando CPF aleatorio
 
-    if sair is True:
-        break
+import random
+
+
+nove_digito = ""
+for i in range(9):
+    nove_digito += str(random.randint(0,9))
+
+
+
+print(nove_digito)
+
+
+
+# Resolução do professor 1° digito
+
+# cpf = '23080537807'
+# nove_digito = cpf[ :9]
+# contador_regressivo = 10
+
+# resultado = 0
+# for digito in nove_digito:
+#     resultado += int(digito) * contador_regressivo
+#     contador_regressivo -= 1
+# digito_1 = (resultado * 10) % 11
+
+# digito_1 = digito_1 if digito_1 <= 9 else 0
+# print(digito_1)
+
+
+# # Resolução do professor 2° digito
+
+# dez_digitos = nove_digito + str(digito_1)
+# contador_regressivo2 = 11
+
+# resultado_digito2 = 0
+
+# for digito in dez_digitos:
+#     resultado_digito2 += int(digito) * contador_regressivo2
+#     contador_regressivo2 -= 1
+
+# digito_2 = (resultado_digito2 * 10) % 11
+# digito_2 = digito_2 if digito_2 <= 9 else 0
+
+# print(digito_2)
+
+# cpf_gerado_pelo_calculo = f'{nove_digito}{digito_1}{digito_2}'
+
+# if cpf == cpf_gerado_pelo_calculo:
+#     print(f'{cpf} é valido')
+# else:
+#     print('CPF invalido')
+
+
+# replace.() -> qual caracter quer substituir
